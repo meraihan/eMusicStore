@@ -44,8 +44,8 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
+            <li class="active"><a href="<c:url value="/"/>">Home</a></li>
+            <li><a href="<c:url value="/Productlist"/>">Products</a></li>
             <li><a href="#contact">Contact</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
@@ -155,13 +155,12 @@
 
 </div><!-- /.container -->
 
-
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="<c:url value="/resources/js/jquery-3.1.1.min.js" />"><\/script>')</script>
-<script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
+<script>window.jQuery || document.write('<script src="<c:url value="../resources/js/jquery-3.1.1.min.js" />"><\/script>')</script>
+<script src="<c:url value="../resources/js/bootstrap.min.js" />"></script>
 <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
 </body>
 </html>
