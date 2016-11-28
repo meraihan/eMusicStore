@@ -1,19 +1,25 @@
 package com.emusicstore.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import org.hibernate.annotations.DynamicUpdate;
+import org.hibernate.annotations.SelectBeforeUpdate;
+import org.springframework.stereotype.Component;
+import org.springframework.web.multipart.MultipartFile;
+
+import javax.persistence.*;
 
 /**
  * Created by rayhan on 11/23/16.
  */
 
+@Component
 @Entity
+@DynamicUpdate
+@SelectBeforeUpdate
 public class Product {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Basic(optional = false)
+    @Column(unique=true,nullable = false, columnDefinition="VARCHAR(255)")
     private String productId;
     private String productName;
     private String productCategory;
@@ -23,6 +29,11 @@ public class Product {
     private String productStatus;
     private int unitinStack;
     private String productManufacturer;
+
+    @Transient
+    @Lob
+    @Column(nullable=false, columnDefinition="mediumblob")
+    private MultipartFile productImage;
 
     public String getProductId() {
         return productId;
@@ -94,5 +105,13 @@ public class Product {
 
     public void setProductManufacturer(String productManufacturer) {
         this.productManufacturer = productManufacturer;
+    }
+
+    public MultipartFile getProductImage() {
+        return productImage;
+    }
+
+    public void setProductImage(MultipartFile productImage) {
+        this.productImage = productImage;
     }
 }

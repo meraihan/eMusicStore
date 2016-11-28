@@ -20,7 +20,6 @@ import java.util.List;
 @Transactional
 public class ProductDaoImpl implements ProductDao {
 
-
     @Autowired
     private SessionFactory sessionFactory;
 
@@ -39,8 +38,7 @@ public class ProductDaoImpl implements ProductDao {
     public List<Product> getAllProducts(){
         Session session = sessionFactory.getCurrentSession();
         String sql = "from Product";
-        Query query = (Query) session.createQuery(sql);
-        List<Product> products = query.list();
+        List<Product> products = session.createQuery(sql).list();
         session.flush();
         return products;
     }

@@ -5,7 +5,7 @@
 
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
-        <property name="url" value="jdbc:mysql://localhost:3306/AJ-Travels"></property>
+        <property name="url" value="jdbc:mysql://localhost:3306/emusic"></property>
         <property name="username" value="raihan"></property>
         <property name="password" value="123"></property>
     </bean>
@@ -29,5 +29,10 @@
     </bean>
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"></property>
+    </bean>
+
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="maxUploadSize" value="1024000"/>
+
     </bean>
 </beans>
