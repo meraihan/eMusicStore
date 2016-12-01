@@ -1,6 +1,7 @@
 package com.emusicstore.dao;
 
 import com.emusicstore.model.Product;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 import java.util.List;
 

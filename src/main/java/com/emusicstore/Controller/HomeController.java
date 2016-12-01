@@ -122,14 +122,14 @@ public class HomeController {
     }
 
     @RequestMapping("/admin/productInventory/editProduct/{id}")
-    public String editProduct(@ModelAttribute("product") String id, Model model){
+    public String editProduct(@ModelAttribute("id") String id, Model model){
         Product product = productDao.getProductById(id);
         model.addAttribute(product);
 
         return "editProduct";
     }
 
-    @RequestMapping(value = "/admin/productInventory/editProduct", method = RequestMethod.POST)
+    @RequestMapping(value = "/admin/productInventory/editProduct/", method = RequestMethod.POST)
     public String editProduct(@ModelAttribute("product") Product product, Model model, HttpServletRequest request){
         MultipartFile productImage = product.getProductImage();
 
