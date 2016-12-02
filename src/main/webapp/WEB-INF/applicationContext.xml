@@ -6,8 +6,8 @@
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
         <property name="url" value="jdbc:mysql://localhost:3306/emusic"></property>
-        <property name="username" value="raihan"></property>
-        <property name="password" value="123"></property>
+        <property name="username" value="root"></property>
+        <property name="password" value=""></property>
     </bean>
 
     <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">

@@ -18,6 +18,8 @@
 
     <form:form action="${pageContext.request.contextPath}/admin/productInventory/editProduct" method="POST" commandName="product" enctype="multipart/form-data">
 
+    <%--<form:hidden path="productId" value="${product.productId}"/>--%>
+
     <div class="form-group">
       <label for="productId">Product ID</label>
       <form:input path="productId" id="id" class="form-Control" value="${product.productId}"/>

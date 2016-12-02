@@ -23,7 +23,7 @@
       <form:input path="productId" id="id" class="form-Control"/>
     </div>
     <div class="form-group">
-      <label for="name">Name</label>
+      <label for="name">Name</label> <form:errors path="productName" cssStyle="color: #ff0000"/>
       <form:input path="productName" id="name" class="form-Control"/>
     </div>
     <div class="form-group">
@@ -39,7 +39,7 @@
     </div>
 
     <div class="form-group">
-      <label for="price">Price</label>
+      <label for="price">Price</label> <form:errors path="productPrice" cssStyle="color: #ff0000"/>
       <form:input path="productPrice" id="price" class="form-Control"/>
     </div>
 
@@ -56,7 +56,7 @@
     </div>
 
     <div class="form-group">
-      <label for="unitinStack">Unit In Stock</label>
+      <label for="unitinStack">Unit In Stock</label> <form:errors path="unitinStack" cssStyle="color: #ff0000"/>
       <form:input path="unitinStack" id="unitinStack" class="form-Control"/>
     </div>
 

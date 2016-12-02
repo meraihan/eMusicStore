@@ -2,10 +2,12 @@ package com.emusicstore.model;
 
 import org.hibernate.annotations.DynamicUpdate;
 import org.hibernate.annotations.SelectBeforeUpdate;
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
 
 /**
  * Created by rayhan on 11/23/16.
@@ -21,9 +23,13 @@ public class Product {
     @Basic(optional = false)
     @Column(unique=true,nullable = false, columnDefinition="VARCHAR(255)")
     private String productId;
+
+    @NotEmpty(message = "Product name must not be null !")
     private String productName;
     private String productCategory;
     private String productDescription;
+
+    @Min(value = 0, message = "The product must not less than zero !")
     private double productPrice;
     private String productCondition;
     private String productStatus;
