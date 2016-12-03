@@ -15,10 +15,11 @@
       <p class="lead">This is administrator page</p>
     </div>
 
-    <c:if test="${pageContext.request.userPricipal.name != null}">
+    <%--<c:if test="${pageContext.request.userPricipal.name != null}">--%>
+      <c:if test="${pageContext.request.userPrincipal.name != null}">
     <h2>
-      Welcome: ${pageContext.request.userPricipal.name} | <a href="<c:url
-      value="/j_spring_security_logout"/> ">Logout</a>
+      Welcome: ${pageContext.request.userPrincipal.name} | <a href="<c:url
+      value="/j_spring_security_logout" />">Logout</a>
 
     </h2>
     </c:if>
