@@ -80,6 +80,11 @@ public class CartController {
     }
 
     @ExceptionHandler(Exception.class)
-    @ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR, reason = "Internal Server Error !")
+    @ResponseStatus(value = HttpStatus.BAD_REQUEST, reason = "Illegal Request, Please varify your payload!")
     public void handleClientErrors(Exception e){}
+
+    @ExceptionHandler(Exception.class)
+    @ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR, reason = "Internal Server Error ! ")
+    public void handleServerError(Exception e){}
+
 }
